@@ -154,5 +154,19 @@
     \end{itemize}
 
 \end{frame}
+\begin{frame}
+    \frametitle{Multivariable optimization with equality constraints}
+    \textbf{Lagrange Multiplier Theorem}
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item Suppose the point $\underline{x}^*$ minimizes $f(\underline{x})$ and satisfies the equality constraints: 
+        $h_j(\underline{x}^*)=0$, for $j=1,2,\dots,m$
+        \item Assume that the constraint gradients $\triangledown h_j(\underline{x}^*)$ are linealy independent.
+        \item Then there exists a unique set $\lambda_j^*$ ($j=1,2,\dots,m$) satisfying:
+        $$\frac{\partial L}{\partial x_i}=\frac{\partial f}{\partial x_i}+\sum^m_{j=1}\lambda_j^*\frac{\partial h_j}{\partial x_i}=0$$
+        where $i=1,2,\dots,n$.
+    \end{itemize}
+
+\end{frame}
 
 \end{document}
