@@ -58,6 +58,7 @@
         \begin{itemize}
             \item If a function $f(x)$ has a local minimum at $x=x^*$,
             and $f'(x)$ exists as a finite number at $x=x^*$, then $f'(x^*)=0.$
+            \item $x^*$ at $f'(x^*)=0$ is called stationary point.
         \end{itemize}
         \item Sufficient condition
         \begin{itemize}
@@ -100,6 +101,26 @@
 
 \begin{frame}
     \frametitle{Multi-variable unconstrained optimization (2)}
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item Necessary condition
+        $$\frac{\partial f(\underline{x}^*)}{\partial x_1}=
+            \frac{\partial f(\underline{x}^*)}{\partial x_2}=
+            \dots=
+            \frac{\partial f(\underline{x}^*)}{\partial x_n}=0$$
+        \begin{itemize}
+            \item In vector form, $\triangledown f(\underline{x}^*=0)$.
+            \item $\underline{x}^*$ at $\triangledown f(\underline{x}^*=0)$ is called stationary point.
+        \end{itemize}
+        \item Sufficient condition
+        \begin{itemize}
+            \item For a stationary point at $\underline{x}=\underline{x}^*$:
+            \begin{itemize}
+                \item if the Hessian matrix of $f(\underline{x})$ evaluated at $\underline{x}=\underline{x}^*$ is \alert{positive definite}, then $\underline{x}^*$ is a local minimum. 
+                \item if the Hessian matrix of $f(\underline{x})$ evaluated at $\underline{x}=\underline{x}^*$ is \alert{negative definite}, then $\underline{x}^*$ is a local maximum. 
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 
 \end{frame}
 
