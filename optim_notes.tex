@@ -50,5 +50,54 @@
     \end{itemize}
     
 \end{frame}
+\begin{frame}
+    \frametitle{Single-variable unconstrained optimization}
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item Necessary condition
+        \begin{itemize}
+            \item If a function $f(x)$ has a local minimum at $x=x^*$,
+            and $f'(x)$ exists as a finite number at $x=x^*$, then $f'(x^*)=0.$
+        \end{itemize}
+        \item Sufficient condition
+        \begin{itemize}
+            \item Suppose $f'(x^*)=f''(x^*)=\dots =f^{(m-1)}(x^*)=0$,
+            but $f^{(m-1)}(x^*)\neq 0$, then $f(x^*)$ is:
+            \begin{itemize}
+                \item 1. a local minimum if $f^{(m-1)}(x^*)>0$ and $m$ is even.
+                \item 2. a local maximum if $f^{(m-1)}(x^*)<0$ and $m$ is even.
+                \item 3. neither a maximum nor a minimum if $m$ is odd.
+            \end{itemize}
+        \end{itemize}     
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Multi-variable unconstrained optimization (1)}
+    Definition of $r^{th}$ differential of function $f$:
+    \begin{flalign*}
+        &\begin{aligned}
+            d^rf(\underline{x}^*)=\sum^n_{i=1}\sum^n_{j=1}\dots\sum^n_{k=1}h_ih_j\dots h_k\frac{\partial^r{f(\underline{x}^*)}}{\partial{x_i}\partial{x_j}\dots\partial{x_k}}
+        \end{aligned}&&
+    \end{flalign*}
+    \textbf{Example:}
+    \begin{flalign*}
+        &\begin{aligned}
+            d^2f(\underline{x}^*)&=d^2f(x_1^*, x_2^*, x_3^*)=\sum^3_{i=1}\sum^3_{j=1}h_ih_j\frac{\partial^2f(\underline{x}^*)}{\partial x_i\partial x_j}\\
+            &=h^2_1\frac{\partial^2f(\underline{x}^*)}{\partial x^2_1}+
+            h^2_2\frac{\partial^2f(\underline{x}^*)}{\partial x^2_2}+
+            h^2_3\frac{\partial^2f(\underline{x}^*)}{\partial x^2_3} \\
+            &+2h_1h_2\frac{\partial^2f(\underline{x}^*)}{\partial x_1\partial x_2}+
+            2h_2h_3\frac{\partial^2f(\underline{x}^*)}{\partial x_2\partial x_3}+
+            2h_1h_3\frac{\partial^2f(\underline{x}^*)}{\partial x_1\partial x_3}
+        \end{aligned}&&
+    \end{flalign*}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Multi-variable unconstrained optimization (2)}
+
+\end{frame}
 
 \end{document}
