@@ -1,0 +1,42 @@
+\documentclass{beamer}
+%Information to be included in the title page:
+\title{Optimization notes}
+\author{Ying Jia Lin}
+\institute{National Cheng Kung University}
+
+\date{May 3rd, 2021}
+\begin{document}  
+\frame{\titlepage}            
+\begin{frame}
+    \frametitle{Directional derivative}
+    From a starting point $\underline{x}_0$ and a given dirction $\underline{u}$:
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item $\underline{x}(\lambda)=\underline{x}_0+\lambda \underline{u}$
+        \begin{itemize}
+            \item $\lambda$ is a scalar.
+        \end{itemize}
+        \item \alert{$d\underline{x}=\underline{u}d\lambda$}
+        \begin{itemize}
+            \item For a small change in $\lambda$.
+        \end{itemize}
+        \item $F(\lambda)=f(\underline{x}_0+\lambda\underline{u})$
+        \begin{flalign*}
+            &\begin{aligned}
+            dF=df&=(\triangledown f(\underline{x}))^\top d\underline{x}\\
+                 &=(\triangledown f(\underline{x}))^\top \alert{\underline{u}d \lambda}
+                 =\triangledown ^\top f\underline{u}\lambda
+            \end{aligned}&&
+        \end{flalign*}
+        \item $\frac{df}{d\lambda}=\triangledown ^\top f\underline{u}$
+        \begin{itemize}
+            \item If $f$ is minimized at $\underline{x}^*=\underline{x}_0+\lambda\underline{u}$, then:
+            \begin{itemize}
+                \item $\triangledown f(\underline{x}^*))^\top f\underline{u}=0$
+                \item gradient $f$ evaluated at the minimum point is orthogonalto $\underline{u}$.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
