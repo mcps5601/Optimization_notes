@@ -1,7 +1,7 @@
 \documentclass{beamer}
 %Information to be included in the title page:
 \title{Optimization notes}
-\author{Ying Jia Lin}
+\author{Ying-Jia Lin}
 \institute{National Cheng Kung University}
 
 \date{May 3rd, 2021}
@@ -119,6 +119,37 @@
                 \item if the Hessian matrix of $f(\underline{x})$ evaluated at $\underline{x}=\underline{x}^*$ is \alert{positive definite}, then $\underline{x}^*$ is a local minimum. 
                 \item if the Hessian matrix of $f(\underline{x})$ evaluated at $\underline{x}=\underline{x}^*$ is \alert{negative definite}, then $\underline{x}^*$ is a local maximum. 
             \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Hessian Matrix}
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item $(H_f)_{i,j}=\frac{\partial^2f}{\partial x_i \partial x_n}$
+        \item In matrix form:     $H_f=\begin{bmatrix}\frac{\partial^2f}{\partial x^2_1} & \frac{\partial^2f}{\partial x_1 \partial x_2}  & \dots & \frac{\partial^2f}{\partial x_1 \partial x_n}\\
+            \frac{\partial^2f}{\partial x_2 \partial x_1} & \frac{\partial^2f}{\partial x^2_2}  & \dots & \frac{\partial^2f}{\partial x_2 \partial x_n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \frac{\partial^2f}{\partial x_n \partial x_1} & \frac{\partial^2f}{\partial x_n \partial x_2}  & \dots & \frac{\partial^2f}{\partial x^2_n}
+        \end{bmatrix}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Definiteness}
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item A matrix is positive definite if all its \alert{eigenvalues} are positive.
+        \begin{itemize}
+            \item If some of the eigenvalues are positive and some are zero, then the matrix is positive semidefinite.
+        \end{itemize}
+        \item \alert{Checking the sign of the determinants} is an alternative way to determine the definiteness of a matrix.
+        \item A twice differentiable function is convex if and only if its Hessian matrix is positive
+        semi-definite.
+        \begin{itemize}
+            \item The function is strictly convex if the Hessian matrix is positive definite.
         \end{itemize}
     \end{itemize}
 
