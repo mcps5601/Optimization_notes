@@ -1,2 +1,2 @@
 # Optimization_notes
-Optimization notes made with LaTEX Beamer.
+Optimization notes made with LaTeX Beamer.
