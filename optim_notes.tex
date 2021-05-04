@@ -199,7 +199,7 @@
                 \item If $|\underline{x}_{\max}-\underline{x}_{\min}|<\epsilon$, stop.
                 The minimum is at $\underline{x}_{\min}$.
                 \item Otherwise, let $\underline{x}_a$ be the averaged position of $\{x_1, x_2, \dots, x_{n+1}\}$,
-                excluding $\underline{x}_{\max}$, and go to step 2.
+                \textbf{excluding} $\underline{x}_{\max}$, and go to step 2.
             \end{itemize}
         \item Let the reflection point $\underline{x}_r=\underline{x}_a+\alpha (\underline{x}_a-\underline{x}_{\max})$.
         \setbeamertemplate{itemize items}[circle]
@@ -215,14 +215,14 @@
     \frametitle{Simplex method: Steps}
     \setbeamertemplate{enumerate items}[circle]
     \begin{enumerate}
-        \item[3.] If $f(\underline{x}_r)>f(\underline{x}_e)$, the point $\underline{x}_{\max}$ is replaced by $\underline{x}_e$.
+        \item[3.]If $f(\underline{x}_r)>f(\underline{x}_e)$, the point $\underline{x}_{\max}$ is \alert{replaced} by $\underline{x}_e$.
         \setbeamertemplate{itemize items}[circle]
         \begin{itemize}
-            \item Otherwise, $\underline{x}_{\max}$ is replaced by $\underline{x}_r$.
+            \item Otherwise, $\underline{x}_{\max}$ is \alert{replaced} by $\underline{x}_r$.
             A new set of n+1 points is formed. Then go to step 1.
         \end{itemize}
         \item[4.]If the second largest $f(\underline{x}_i)>f(\underline{x}_{r})$,
-         then $\underline{x}_{\max}$ is replaced by $\underline{x}_r$ to form a new set of n+1 points,
+         then $\underline{x}_{\max}$ is \alert{replaced} by $\underline{x}_r$ to form a new set of n+1 points,
          and go to step 1.
          \setbeamertemplate{itemize items}[circle]
          \begin{itemize}
@@ -232,8 +232,8 @@
         and let the contraction point $\underline{x}_c=\underline{x}_a+\beta (\underline{x}_p-\underline{x}_a)$.
         \setbeamertemplate{itemize items}[circle]
         \begin{itemize}
-            \item If $f(\underline{x}_c)>f(\underline{x}_p)$, replace $\underline{x}_j$ by $\underline{x}_j+(\underline{x}_{\min}-\underline{x}_j)/2$, for $j=1,2,\dots,n+1$, and go to step 1.
-            \item Otherwise, $\underline{x}_c$ replaces $\underline{x}_{\max}$ to form a new set of n+1 points, and go to step 1.
+            \item If $f(\underline{x}_c)>f(\underline{x}_p)$, \alert{replace} $\underline{x}_j$ by $\underline{x}_j+(\underline{x}_{\min}-\underline{x}_j)/2$, for $j=1,2,\dots,n+1$, and go to step 1.
+            \item Otherwise, $\underline{x}_c$ \alert{replaces} $\underline{x}_{\max}$ to form a new set of n+1 points, and go to step 1.
         \end{itemize}
     \end{enumerate}
     
