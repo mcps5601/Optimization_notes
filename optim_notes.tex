@@ -169,4 +169,72 @@
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{Simplex method: Introduction}
+    \textbf{Definition of Simplex}
+
+    The geometric figure formed by a set of n + 1 points in an
+    n-dimensional space is called a simplex.
+
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item When the points are equidistant, the simplex is said to be \textit{regular}.
+        \item In two dimensions the simplex is a triangle, and in three dimensions, it is a tetrahedron.
+        \item The simplex method was originally given by Spendley et al. and was developed later by Nelder and Mead.
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Simplex method: Steps}
+    \begin{enumerate}
+        \item Identify $\underline{x}_{\min}$ and $\underline{x}_{\max}$ amoung
+            $\{\underline{x}_1, \underline{x}_2,\dots,\underline{x}_{n+1}\}$
+            \setbeamertemplate{itemize items}[circle]
+            \begin{itemize}
+                \item such that $f(\underline{x}_{\min})$ is the minimum
+                and $f(\underline{x}_{\max})$ is the maximum
+                of all the $f(\underline{x}_i)$, for $i=1, 2, \dots,n+1$.
+                \item If $|\underline{x}_{\max}-\underline{x}_{\min}|<\epsilon$, stop.
+                The minimum is at $\underline{x}_{\min}$.
+                \item Otherwise, let $\underline{x}_a$ be the averaged position of $\{x_1, x_2, \dots, x_{n+1}\}$,
+                excluding $\underline{x}_{\max}$, and go to step 2.
+            \end{itemize}
+        \item Let the reflection point $\underline{x}_r=\underline{x}_a+\alpha (\underline{x}_a-\underline{x}_{\max})$.
+        \setbeamertemplate{itemize items}[circle]
+        \begin{itemize}
+            \item If $f(\underline{x}_{min})>f(\underline{x}_{r})$, let the expansion point $\underline{x}_e=\underline{x}_a+\gamma (\underline{x}_r-\underline{x}_a)$,
+            and go to step 3.
+            \item Otherwise, go to step 4.
+        \end{itemize}
+        \item If $f(\underline{x}_r)>f(\underline{x}_e)$, the point $\underline{x}_{\max}$ is replaced by $\underline{x}_e$.
+        \setbeamertemplate{itemize items}[circle]
+        \begin{itemize}
+            \item Otherwise, $\underline{x}_{\max}$ is replaced by $\underline{x}_r$.
+            A new set of n+1 points is formed. Then go to step 1.
+        \end{itemize}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Simplex method: Steps}
+    \setbeamertemplate{enumerate items}[circle]
+    \begin{enumerate}
+        \item[4.]If the second largest $f(\underline{x}_i)>f(\underline{x}_{r})$,
+         then $\underline{x}_{\max}$ is replaced by $\underline{x}_r$ to form a new set of n+1 points,
+         and go to step 1.
+         \setbeamertemplate{itemize items}[circle]
+         \begin{itemize}
+             \item Otherwise, go to step 5.
+         \end{itemize}
+        \item[5.] Let $\underline{x}_p$ be defined such that $f(\underline{x}_p)=\min{\{f(\underline{x}_r), f(\underline{x}_{\max})\}}$
+        and let the contraction point $\underline{x}_c=\underline{x}_a+\beta (\underline{x}_p-\underline{x}_a)$.
+        \setbeamertemplate{itemize items}[circle]
+        \begin{itemize}
+            \item If $f(\underline{x}_c)>f(\underline{x}_p)$, replace $\underline{x}_j$ by $\underline{x}_j+(\underline{x}_{\min}-\underline{x}_j)/2$, for $j=1,2,\dots,n+1$, and go to step 1.
+            \item Otherwise, $\underline{x}_c$ replaces $\underline{x}_{\max}$ to form a new set of n+1 points, and go to step 1.
+        \end{itemize}
+    \end{enumerate}
+    
+\end{frame}
+
 \end{document}
