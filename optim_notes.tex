@@ -186,6 +186,8 @@
 
 \begin{frame}
     \frametitle{Simplex method: Steps}
+    Choose a reflection coefficient $\alpha>0$, an expansion coefficient $\gamma>1$, and a contraction coefficient $0<\beta<1$.
+    \hfill \break
     \begin{enumerate}
         \item Identify $\underline{x}_{\min}$ and $\underline{x}_{\max}$ amoung
             $\{\underline{x}_1, \underline{x}_2,\dots,\underline{x}_{n+1}\}$
@@ -206,12 +208,6 @@
             and go to step 3.
             \item Otherwise, go to step 4.
         \end{itemize}
-        \item If $f(\underline{x}_r)>f(\underline{x}_e)$, the point $\underline{x}_{\max}$ is replaced by $\underline{x}_e$.
-        \setbeamertemplate{itemize items}[circle]
-        \begin{itemize}
-            \item Otherwise, $\underline{x}_{\max}$ is replaced by $\underline{x}_r$.
-            A new set of n+1 points is formed. Then go to step 1.
-        \end{itemize}
     \end{enumerate}
 \end{frame}
 
@@ -219,6 +215,12 @@
     \frametitle{Simplex method: Steps}
     \setbeamertemplate{enumerate items}[circle]
     \begin{enumerate}
+        \item[3.] If $f(\underline{x}_r)>f(\underline{x}_e)$, the point $\underline{x}_{\max}$ is replaced by $\underline{x}_e$.
+        \setbeamertemplate{itemize items}[circle]
+        \begin{itemize}
+            \item Otherwise, $\underline{x}_{\max}$ is replaced by $\underline{x}_r$.
+            A new set of n+1 points is formed. Then go to step 1.
+        \end{itemize}
         \item[4.]If the second largest $f(\underline{x}_i)>f(\underline{x}_{r})$,
          then $\underline{x}_{\max}$ is replaced by $\underline{x}_r$ to form a new set of n+1 points,
          and go to step 1.
