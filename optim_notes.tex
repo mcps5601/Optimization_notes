@@ -275,7 +275,7 @@
     \frametitle{Conjugate gradient method (Proof - 2)}
 \textbf{Minimize $f$ to obtain the optimized $\lambda^*$:}
 \begin{align*}
-    \frac{df}{d\lambda^*}&=\sum^n_{i=1}\frac{\partial f}{\partial (x_1+\lambda_1^*S_1)}\frac{\partial (x_1+\lambda_1^*S_1)}{\partial \lambda_1^*}\\
+    \frac{df}{d\lambda_1^*}&=\sum^n_{i=1}\frac{\partial f}{\partial (x_1+\lambda_1^*S_1)}\frac{\partial (x_1+\lambda_1^*S_1)}{\partial \lambda_1^*}\\
     &=\triangledown f(x_1+\lambda_1^*S_1)^\top\cdot S_1 \\
     &=[\textrm{A}(x_1+\lambda_1^*S_1)+\textrm{B}]^\top\cdot S_1 \\
     &=[\alert{\textrm{A}x_1+\textrm{B}}+\textrm{A}\lambda_1^*S_1]^\top\cdot S_1 \\
