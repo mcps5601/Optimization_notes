@@ -269,5 +269,18 @@
     \end{enumerate}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Penalty function method}
+    Find $\textrm{X}$ which minimizes $f(\textrm{X})$ is converted into
+    an unconstrained minimization problem by constructing a function of the form:
+    $$\phi_k=\phi(\textrm{X}, r_k)=f(\textrm{X})+r_k\sum^m_{j-1}G_j[g_j(\textrm{X})]$$
+    \setbeamertemplate{itemize items}[circle]
+    \begin{itemize}
+        \item $g_j$: inequality constraints
+        \item $G_j$: some function of the constraint $g_j$
+        \item $r_k$: penalty parameter (a positive constant)
+        \item $r_k\sum^m_{j-1}G_j[g_j(\textrm{X})]$ is the penalty term.
+    \end{itemize}
+\end{frame}
 
 \end{document}
