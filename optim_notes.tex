@@ -236,6 +236,21 @@
             \item Otherwise, $\underline{x}_c$ \alert{replaces} $\underline{x}_{\max}$ to form a new set of n+1 points, and go to step 1.
         \end{itemize}
     \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Transformation techniques}
+    It may be possible to convert a constrained optimization problem into an unconstrained one
+    by making a change of variables.
+    \hfill \break
+    If lower and upper bounds on $x_i$ are specified as:
+    $$l_i\leq x_i\leq u_i$$
+    which can be satisfied by transforming the variable $x_i$ as:
+    $$x_i=l_i+(u_i-l_i)\sin^2y_i$$
+    where $y_i$ is the new variable, which can take any value.
+    \begin{itemize}
+    \item If $x_i$ is restricted to lie in the interval $(0, 1)$, $x_i=\sin^2y$
+    \end{itemize}
     
 \end{frame}
 
