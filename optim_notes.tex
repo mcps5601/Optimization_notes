@@ -5,6 +5,7 @@
 \institute{National Cheng Kung University}
 
 \date{May 3rd, 2021}
+\setbeamertemplate{footline}[page number]
 \begin{document}  
 \frame{\titlepage}            
 \begin{frame}
@@ -236,6 +237,57 @@
             \item Otherwise, $\underline{x}_c$ \alert{replaces} $\underline{x}_{\max}$ to form a new set of n+1 points, and go to step 1.
         \end{itemize}
     \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quadratic function}
+    $$Q(\textrm{\underline{x}})=\frac{1}{2}\textrm{\underline{x}}^\top\textrm{A}\textrm{\underline{x}}+
+    \textrm{B}^\top\textrm{\underline{x}}+\textrm{C}
+    $$
+    From the two starting points $x_a$ and $x_b$, function minimum is searched along the same direction $\underline{S}$,
+    reaching the minimum points $\underline{x}_1$ and $\underline{x}_2$, respectively.
+    \begin{figure}
+    \includegraphics[scale=0.25]{img/quadratic.png}
+    \centering
+    \end{figure}
+    Then the line joining $x_1$ and $x_2$ is $\textrm{A}$-conjugate to $\underline{S}$.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conjugate gradient method}
+    During the $(j+1)^{th}$ saerch from point $\underline{x}_{j+1}$, the search direction is given by:
+    $$\underline{S}_{j+1}=-\triangledown f(\underline{x}_{j+1})+\beta_j \underline{S}_j$$
+    where $$\beta_j=\frac{\triangledown f_{j+1}^\top\triangledown f_{j+1}}{\triangledown f_{j}^\top\triangledown f_{j}}$$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conjugate gradient method (Proof - 1)}
+    \textbf{From Quadratic function:}
+    \begin{align*}f(\textrm{\underline{x}})&=\frac{1}{2}\textrm{\underline{x}}^\top\textrm{A}\textrm{\underline{x}}+
+    \textrm{B}^\top\textrm{\underline{x}}+\textrm{C} \\
+    f'(\textrm{\underline{x}})&=\textrm{A}\textrm{\underline{x}}+\textrm{B}
+    \end{align*}
+    \textbf{From steepest descent direction with step length $\lambda$:}
+    $$\underline{x}_2=\underline{x}_1+\lambda_1^*+\underline{S}_1$$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conjugate gradient method (Proof - 2)}
+\textbf{Minimize $f$ to obtain the optimized $\lambda^*$:}
+\begin{align*}
+    \frac{df}{d\lambda^*}&=\sum^n_{i=1}\frac{\partial f}{\partial (x_1+\lambda_1^*S_1)}\frac{\partial (x_1+\lambda_1^*S_1)}{\partial \lambda_1^*}\\
+    &=\triangledown f(x_1+\lambda_1^*S_1)^\top\cdot S_1 \\
+    &=[\textrm{A}(x_1+\lambda_1^*S_1)+\textrm{B}]^\top\cdot S_1 \\
+    &=[\alert{\textrm{A}x_1+\textrm{B}}+\textrm{A}\lambda_1^*S_1]^\top\cdot S_1 \\
+    &=[\alert{\triangledown f_1}+\textrm{A}\lambda_1^*S_1]^\top\cdot S_1 \\
+    &=\triangledown f_1^\top S_1+\lambda_1^*S_1^\top \textrm{A}S_1=0
+\end{align*}
+Thus, we can get $\lambda_1^*=-\frac{\triangledown f_1^\top S_1}{S_1^\top \textrm{A}S_1}$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fletcher-Reeves method}
+    
 \end{frame}
 
 \begin{frame}
