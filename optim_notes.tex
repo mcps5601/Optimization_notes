@@ -247,10 +247,11 @@
     From the two starting points $x_a$ and $x_b$, function minimum is searched along the same direction $\underline{S}$,
     reaching the minimum points $\underline{x}_1$ and $\underline{x}_2$, respectively.
     \begin{figure}
-    \includegraphics[scale=0.25]{img/quadratic.png}
+    \includegraphics[scale=0.2]{img/quadratic.png}
     \centering
     \end{figure}
     Then the line joining $x_1$ and $x_2$ is $\textrm{A}$-conjugate to $\underline{S}$.
+    $\Rightarrow S_i^\top\textrm{A}S_j^\top\neq 0$, for $i\neq j$. $(i=1, 2, \dots,n; j=1,2,\dots,n)$
 \end{frame}
 
 \begin{frame}
@@ -268,7 +269,7 @@
     f'(\textrm{\underline{x}})&=\textrm{A}\textrm{\underline{x}}+\textrm{B}
     \end{align*}
     \textbf{From steepest descent direction with step length $\lambda$:}
-    $$\underline{x}_2=\underline{x}_1+\lambda_1^*+\underline{S}_1$$
+    $$\underline{x}_2=\underline{x}_1+\lambda_1^*\underline{S}_1$$
 \end{frame}
 
 \begin{frame}
@@ -284,6 +285,46 @@
 \end{align*}
 Thus, we can get $\lambda_1^*=-\frac{\triangledown f_1^\top S_1}{S_1^\top \textrm{A}S_1}$
 \end{frame}
+
+\begin{frame}
+    \frametitle{Conjugate gradient method (Proof - 3)}
+    \textbf{From steepest descent direction with step length $\lambda$:}
+    $$x_2=x_1+\lambda_1^*S_1$$
+    $$\Rightarrow \frac{1}{\lambda_1^*}(x_2-x_1)=S_1$$
+    Multipliy $\textrm{A}$ and change left and right side:
+    $$\Rightarrow \textrm{A}S_1=\frac{1}{\lambda_1^*}\textrm{A}(x_2-x_1)$$
+    $$\Rightarrow \alert{S_2^\top\text{A}S_1}=\frac{1}{\lambda_1^*}S_2^\top\textrm{A}(x_2-x_1)=\alert{0}$$
+    Currently, we know $\frac{1}{\lambda_1^*}$ is not zero. $\Rightarrow S_2^\top\textrm{A}(x_2-x_1)=0$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conjugate gradient method (Proof - 4)}
+    \begin{align*}
+        S_2^\top\textrm{A}(x_2-x_1)&=S_2^\top(\textrm{A}x_2+\textrm{B}-\textrm{A}x_1-\textrm{B}) \\
+        &=S_2^\top(\triangledown f_2 - \triangledown f_1) \\
+        &=(-\triangledown f_2+\beta_2S_1)^\top(\triangledown f_2 - \triangledown f_1) \\
+        &=-\triangledown f_2^\top\triangledown f_2+\alert{\triangledown f_2^\top\triangledown f_1}-\alert{\beta_2\triangledown f_1^\top\triangledown f_2} + \beta_2\triangledown f_1^\top\triangledown f_1
+    \end{align*}
+    $\triangledown f_2=\triangledown f_1+\textrm{A}\lambda_1^*S_1
+    =\triangledown f_1-\lambda_1^*\textrm{A}\triangledown f_1$ \\
+    \begin{flalign*}
+        &\begin{aligned}
+        \triangledown f_2^\top\triangledown f_1&=(\triangledown f_1-\lambda_1^*\text{A}\triangledown f_1)^\top\triangledown f_1 \\
+        &=(\triangledown f_1+\frac{\triangledown f_1^\top S_1}{S_1^\top\textrm{A}S_1}\textrm{A}\triangledown f_1)^\top\triangledown f_1 \\
+        &=(\triangledown f_1-\frac{\triangledown f_1^\top \triangledown f_1}{\triangledown f_1^\top\textrm{A}\triangledown f_1}\textrm{A}\triangledown f_1)^\top\triangledown f_1=0\cdot\triangledown f_1=0
+        \end{aligned}&&
+    \end{flalign*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conjugate gradient method (Proof - 5)}
+    Because $\triangledown f_2^\top\triangledown f_1=0$
+    \begin{align*}
+        \Rightarrow S_2^\top\textrm{A}(x_2-x_1)&=-\triangledown f_2^\top\triangledown f_2+ \beta_2\triangledown f_1^\top\triangledown f_1=0 \\
+        \Rightarrow \beta_2&=\frac{\triangledown f_2^\top\triangledown f_2}{\triangledown f_1^\top\triangledown f_1}
+    \end{align*}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Fletcher-Reeves method}
